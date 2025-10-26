@@ -132,7 +132,8 @@ suite('Render Functions', () => {
 				`<policy name="TestPolicy" class="Both" displayName="$(string.TestPolicy)" key="Software\\Policies\\Microsoft\\${regKey}">`,
 				`	<enabledValue><decimal value="1" /></enabledValue>`,
 				`</policy>`
-			],
+			],			`	<supportedOn ref="Supported_${this.minimumVersion.replace(/\./g, '_')}" />`,
+
 			renderADMLStrings: () => ['<string id="TestPolicy">Test Policy</string>'],
 			renderADMLPresentation: () => '<presentation id="TestPolicy"/>',
 			renderProfile: () => ['<key>TestPolicy</key>', '<true/>'],
